@@ -11,6 +11,44 @@ void touppercase(char* words){
 class Matrix{
 	private:
 		char area[24][24];
+		
+	public:
+		Matrix() {
+        char temp[24][24] = {
+            {"AAFLKHPFSSUFICICLESGNNH"},
+            {"SFVREOMRWLRTTSXOQQNAOAO"},
+            {"QEIAIFXAEIRFVFYSXIMINJI"},
+            {"WSTRLGOCAPBIAFIWIWTUACM"},
+            {"FEYAEAISTPCRLUJKOAKCERS"},
+            {"RVDAKPNDEEHDEMSNCKKFOAH"},
+            {"MRNEDSLCRRIWNRSAAFITMMI"},
+            {"YAAECIEAHYMOTAVHRSSTISB"},
+            {"RJSEWELCCENNIETOHWSGLSE"},
+            {"ATANYYMOIEESNESIOIRELTR"},
+            {"UTENEWEBHMYBETNNRAIEBEN"},
+            {"RCLKUTEAEQJLSGSHTGDSKOA"},
+            {"BHOICATNRRSDDECEHOOLGIT"},
+            {"ENSLUARIRSETALOCOHCTOHE"},
+            {"FZFUDQJYMADOYIWYGLOVESU"},
+            {"TEKALFWONSNAEBMIEJTZNTG"},
+            {"ESWPOSJXEUTUYOZUWAKEZHM"},
+            {"KZUHBPEZEERFLMSNOWBALLH"},
+            {"NSNOWBOARDYTVWYCLEVOHSA"},
+            {"ACOCRQLGZIYCHODRAZZILBI"},
+            {"LBVKKWANZAAQINWOLPWONSL"},
+            {"BFREEZINGRAINSLILGTMELT"},
+            {"HQPYLWHFMNFFUFPSWXNUMMV"}
+        };
+
+        for (int i = 0; i < 24; i++) {
+            for (int j = 0; j < 24; j++) {
+                area[i][j] = temp[i][j];
+            }
+        }
+    }
+    bool find(const* char kata){
+    	
+	}
 };
 
 int main(){
