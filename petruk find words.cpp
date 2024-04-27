@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstring>
-using namespace std
+using namespace std;
 
 void touppercase(char* words){
-	for(int i=0; words[i] != "\0"; i++){
+	for(int i=0; words[i] != '\0'; i++){
 		words[i] = toupper(words[i]);
 	}
 }
@@ -46,8 +46,40 @@ class Matrix{
             }
         }
     }
-    bool find(const* char kata){
+    bool find(const char* kata){
+    	int len = strlen(kata);
     	
+    	//hori kiri-kanan
+        for (int i = 0; i < 24; i++) {
+            for (int j = 0; j <= 24 - len; j++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i][j + k] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        // hori kanan-kiri
+        for (int i = 0; i < 24; i++) {
+            for (int j = 23; j >= len - 1; j--) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i][j - k] != len[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
 	}
 };
 
