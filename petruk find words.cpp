@@ -70,7 +70,7 @@ class Matrix{
             for (int j = 23; j >= len - 1; j--) {
                 bool found = true;
                 for (int k = 0; k < len; k++) {
-                    if (area[i][j - k] != len[k]) {
+                    if (area[i][j - k] != kata[k]) {
                         found = false;
                         break;
                     }
@@ -80,6 +80,39 @@ class Matrix{
                 }
             }
         }
+        
+        //ver atas-bawah
+        for (int j = 0; j < 24; j++) {
+            for (int i = 0; i <= 24 - len; i++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (ara[i + k][j] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        //ver bawah-atas
+        for (int j = 0; j < 24; j++) {
+            for (int i = 23; i >= len - 1; i--) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i - k][j] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+        
 	}
 };
 
