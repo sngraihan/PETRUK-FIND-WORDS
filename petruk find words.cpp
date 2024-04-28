@@ -185,15 +185,26 @@ class Matrix{
 int main(){
 	int n;
 	cin >> n;
+
+	
 	char words[n][24];
 	
 	Matrix matrix;
 	
 	for(int i=0; i<n;i++){
+		cin.ignore();
 		cin.getline(words[i], 25);
+		
 		touppercase(words[i]);
 	}
 	
+	for(int i=0; i<n; i++){
+		if(matrix.find(words[i])){
+			cout << "ada" << endl;
+		} else{
+			cout << "tidak ada" <<endl;
+		}
+	}
 	
 	return 0;
 }
