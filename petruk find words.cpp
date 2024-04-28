@@ -86,7 +86,7 @@ class Matrix{
             for (int i = 0; i <= 24 - len; i++) {
                 bool found = true;
                 for (int k = 0; k < len; k++) {
-                    if (ara[i + k][j] != kata[k]) {
+                    if (area[i + k][j] != kata[k]) {
                         found = false;
                         break;
                     }
@@ -112,6 +112,72 @@ class Matrix{
                 }
             }
         }
+        
+        //diag ataskiri
+        for (int i = 0; i < 24; i++) {
+            for (int j = 0; j < 24; j++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i - k][j - k] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        //diag ataskanan
+        for (int i = 0; i < 24; i++) {
+            for (int j = 0; j <= 24; j++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i - k][j + k] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        //diag bawahkanan
+        for (int i = 0; i <= 24; i++) {
+            for (int j = 0; j <= 24; j++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i + k][j + k] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        //diag bawah kiri
+        for (int i = 0; i <= 24; i++) {
+            for (int j = 0; j < 24; j++) {
+                bool found = true;
+                for (int k = 0; k < len; k++) {
+                    if (area[i + k][j - k] != kata[k]) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
         
 	}
 };
